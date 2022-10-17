@@ -17,13 +17,29 @@
   
   
   <entry>
-    <title></title>
+    <title>linux用户和组管理</title>
     <link href="/2022/10/07/%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84/"/>
     <url>/2022/10/07/%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h1><p>初级用户权限</p><p>r  read   w  write  x  execute</p><h2 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h2><p>使用 useradd (用户名) 创建新用户</p><p>-d 指定主目录</p><p>-g 指定组</p><p>-G 指定附加组</p><p>-s 指定shell文件</p><p>-u 指定用户ID</p><h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>使用userdel(用户名)</p><p>-r 删除相关文件</p><h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p>用户文件目录（/home/下）vi编辑文件</p><p>usermod </p><p>-l 锁定用户</p><p>-u 解锁用户</p><h2 id="密码"><a href="#密码" class="headerlink" title="密码"></a>密码</h2><p>添加用户密码是 passwd (用户名)</p><p>-l 锁定用户</p><p>-u 解锁用户</p><p>删除修改</p><p>查看文件 /etc/shadow 或 /etc/password </p><p>8个字段</p><pre><code class="hljs">- 用户名- 密码- 用户ID- 组ID- 备注及全称- 用户主目录- 用户账号过期市场- 警告时长</code></pre><p>查看文件字段</p><h2 id="主要文件"><a href="#主要文件" class="headerlink" title="主要文件"></a>主要文件</h2><p>/etc/login.defs</p><h1 id="组管理"><a href="#组管理" class="headerlink" title="组管理"></a>组管理</h1><p>组管理文件夹目录</p><p>/etc/group</p><h3 id="添加-1"><a href="#添加-1" class="headerlink" title="添加"></a>添加</h3><p>groupadd</p><p>-g 指定组ID</p><h3 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h3><p>groupdel </p><h3 id="修改-1"><a href="#修改-1" class="headerlink" title="修改"></a>修改</h3><p>groupmod</p><p>-n 重新命名</p><p>-g 更改组ID</p><h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><p>tail  查看文件尾</p><p>head 查看文件头</p><p>ls 列出文件夹</p><h1 id="小扩展"><a href="#小扩展" class="headerlink" title="小扩展"></a>小扩展</h1><p>添加可视化用户和组管理的软件</p>]]></content>
     
     
+    <categories>
+      
+      <category>用户和组管理</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>linux</tag>
+      
+      <tag>操作系统</tag>
+      
+      <tag>基础</tag>
+      
+    </tags>
     
   </entry>
   
