@@ -1,0 +1,717 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/7b9492ca6d8210fcc11eea2cd2831e7.jpg">
+  <link rel="icon" href="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/7b9492ca6d8210fcc11eea2cd2831e7.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="江帆">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="模块A样题及解析 ****A-1登录安全加固****请对服务器Web按要求进行相应的设置，提高服务器的安全性。1.密码策略（Web）↑这里的web指的是 windows server 版本  a.最小密码长度不少于8个字符，将密码长度最小值的属性配置界面截图；开始—-输入（编辑）—编辑组策略    b.密码策略必须同时满足大小写字母、数字、特殊字符，将密码必须符合复杂性要求的属性配置界面截图。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络安全——模块A（解析）">
+<meta property="og:url" content="http://example.com/2023/05/14/%E7%BD%91%E5%AE%89%E6%A8%A1%E5%9D%97A/index.html">
+<meta property="og:site_name" content="江_帆">
+<meta property="og:description" content="模块A样题及解析 ****A-1登录安全加固****请对服务器Web按要求进行相应的设置，提高服务器的安全性。1.密码策略（Web）↑这里的web指的是 windows server 版本  a.最小密码长度不少于8个字符，将密码长度最小值的属性配置界面截图；开始—-输入（编辑）—编辑组策略    b.密码策略必须同时满足大小写字母、数字、特殊字符，将密码必须符合复杂性要求的属性配置界面截图。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230514123038064.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515092752194.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515094811937.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515093256946.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515094915340.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515094932793.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515101600209.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515101627027.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515101908327.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515123311759.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515123340057.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515123411630.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515123731368.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515124203616.png">
+<meta property="og:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515133359981.png">
+<meta property="article:published_time" content="2023-05-14T01:11:14.610Z">
+<meta property="article:modified_time" content="2023-05-15T07:11:48.074Z">
+<meta property="article:author" content="江帆">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="windows">
+<meta property="article:tag" content="评估">
+<meta property="article:tag" content="安全">
+<meta property="article:tag" content="比赛">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230514123038064.png">
+  
+  
+  
+  <title>网络安全——模块A（解析） - 江_帆</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":120,"cursorChar":"|","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":"ture","follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"GB6oIKs8r49RhYP2NgL6iYev-MdYXbMMI","app_key":"1GIGAMZU7f6HF6LN3gSsqqfN","server_url":"https://gb6oiks8.api.lncldglobal.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>江  帆</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/v2-3e75ab2d6194cf760dab8352f8c1b8ef_720w.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="网络安全——模块A（解析）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-05-14 09:11" pubdate>
+          2023年5月14日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          11 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">网络安全——模块A（解析）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="模块A样题及解析"><a href="#模块A样题及解析" class="headerlink" title="模块A样题及解析"></a>模块A样题及解析</h1><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230514123038064.png" srcset="/img/loading.gif" lazyload alt="image-20230514123038064"></p>
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5><h3 id="A-1登录安全加固-请对服务器Web按要求进行相应的设置，提高服务器的安全性。"><a href="#A-1登录安全加固-请对服务器Web按要求进行相应的设置，提高服务器的安全性。" class="headerlink" title="****A-1登录安全加固****请对服务器Web按要求进行相应的设置，提高服务器的安全性。"></a>****A-1登录安全加固****请对服务器Web按要求进行相应的设置，提高服务器的安全性。</h3><h4 id="1-密码策略（Web）"><a href="#1-密码策略（Web）" class="headerlink" title="1.密码策略（Web）"></a>1.密码策略（Web）</h4><p>↑这里的web指的是 windows server 版本 </p>
+<h5 id="a-最小密码长度不少于8个字符，将密码长度最小值的属性配置界面截图；"><a href="#a-最小密码长度不少于8个字符，将密码长度最小值的属性配置界面截图；" class="headerlink" title="a.最小密码长度不少于8个字符，将密码长度最小值的属性配置界面截图；"></a>a.最小密码长度不少于8个字符，将密码长度最小值的属性配置界面截图；</h5><p>开始—-输入（编辑）—编辑组策略</p>
+<p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515092752194.png" srcset="/img/loading.gif" lazyload alt="image-20230515092752194"></p>
+<p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515094811937.png" srcset="/img/loading.gif" lazyload alt="image-20230515094811937"></p>
+<p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515093256946.png" srcset="/img/loading.gif" lazyload alt="image-20230515093256946"></p>
+<h5 id="b-密码策略必须同时满足大小写字母、数字、特殊字符，将密码必须符合复杂性要求的属性配置界面截图。"><a href="#b-密码策略必须同时满足大小写字母、数字、特殊字符，将密码必须符合复杂性要求的属性配置界面截图。" class="headerlink" title="b.密码策略必须同时满足大小写字母、数字、特殊字符，将密码必须符合复杂性要求的属性配置界面截图。"></a>b.密码策略必须同时满足大小写字母、数字、特殊字符，将密码必须符合复杂性要求的属性配置界面截图。</h5><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515094915340.png" srcset="/img/loading.gif" lazyload alt="image-20230515094915340"></p>
+<p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515094932793.png" srcset="/img/loading.gif" lazyload alt="image-20230515094932793"></p>
+<h4 id="2-登录策略（Web）"><a href="#2-登录策略（Web）" class="headerlink" title="2.登录策略（Web）"></a>2.登录策略（Web）</h4><h5 id="a-在用户登录系统时，应该有“For-authorized-users-only”提示信息，将登录系统时系统弹出警告信息窗口截图；"><a href="#a-在用户登录系统时，应该有“For-authorized-users-only”提示信息，将登录系统时系统弹出警告信息窗口截图；" class="headerlink" title="a.在用户登录系统时，应该有“For authorized users only”提示信息，将登录系统时系统弹出警告信息窗口截图；"></a>a.在用户登录系统时，应该有“For authorized users only”提示信息，将登录系统时系统弹出警告信息窗口截图；</h5><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515101600209.png" srcset="/img/loading.gif" lazyload alt="image-20230515101600209"></p>
+<p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515101627027.png" srcset="/img/loading.gif" lazyload alt="image-20230515101627027"></p>
+<h5 id="b-一分钟内仅允许5次登录失败的尝试，超过5次，登录帐号锁定1分钟，将账户锁定策略配置界面截图；"><a href="#b-一分钟内仅允许5次登录失败的尝试，超过5次，登录帐号锁定1分钟，将账户锁定策略配置界面截图；" class="headerlink" title="b.一分钟内仅允许5次登录失败的尝试，超过5次，登录帐号锁定1分钟，将账户锁定策略配置界面截图；"></a>b.一分钟内仅允许5次登录失败的尝试，超过5次，登录帐号锁定1分钟，将账户锁定策略配置界面截图；</h5><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515101908327.png" srcset="/img/loading.gif" lazyload alt="image-20230515101908327"></p>
+<h5 id="c-远程用户非活动会话连接超时应小于等于5分钟，将RDP-Tcp属性对应的配置界面截图。"><a href="#c-远程用户非活动会话连接超时应小于等于5分钟，将RDP-Tcp属性对应的配置界面截图。" class="headerlink" title="c.远程用户非活动会话连接超时应小于等于5分钟，将RDP-Tcp属性对应的配置界面截图。"></a>c.远程用户非活动会话连接超时应小于等于5分钟，将RDP-Tcp属性对应的配置界面截图。</h5><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515123311759.png" srcset="/img/loading.gif" lazyload alt="image-20230515123311759"></p>
+<p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515123340057.png" srcset="/img/loading.gif" lazyload alt="image-20230515123340057"></p>
+<p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515123411630.png" srcset="/img/loading.gif" lazyload alt="image-20230515123411630"></p>
+<h4 id="3-用户安全管理-Web"><a href="#3-用户安全管理-Web" class="headerlink" title="3.用户安全管理(Web)"></a>3.用户安全管理(Web)</h4><h5 id="a-对服务器进行远程管理安全性SSL加固，防止敏感信息泄露被监听，将RDP-Tcp属性对应的配置界面截图；"><a href="#a-对服务器进行远程管理安全性SSL加固，防止敏感信息泄露被监听，将RDP-Tcp属性对应的配置界面截图；" class="headerlink" title="a.对服务器进行远程管理安全性SSL加固，防止敏感信息泄露被监听，将RDP-Tcp属性对应的配置界面截图；"></a>a.对服务器进行远程管理安全性SSL加固，防止敏感信息泄露被监听，将RDP-Tcp属性对应的配置界面截图；</h5><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515123731368.png" srcset="/img/loading.gif" lazyload alt="image-20230515123731368"></p>
+<h5 id="b-仅允许超级管理员账号关闭系统，将关闭系统属性的配置界面截图。"><a href="#b-仅允许超级管理员账号关闭系统，将关闭系统属性的配置界面截图。" class="headerlink" title="b.仅允许超级管理员账号关闭系统，将关闭系统属性的配置界面截图。"></a>b.仅允许超级管理员账号关闭系统，将关闭系统属性的配置界面截图。</h5><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515124203616.png" srcset="/img/loading.gif" lazyload alt="image-20230515124203616"></p>
+<h3 id="A-2-Web安全加固-Web"><a href="#A-2-Web安全加固-Web" class="headerlink" title="*A-2 Web安全加固(Web)*"></a><em><strong>*A-2 Web安全加固(Web)*</strong></em></h3><h5 id="1-为了防止web中-mdb数据库文件非法下载，请对Web配置文件进行安全加固，将C-Windows-System32-inetsrv-config-applicationHost配置文件中对应的部分截图；"><a href="#1-为了防止web中-mdb数据库文件非法下载，请对Web配置文件进行安全加固，将C-Windows-System32-inetsrv-config-applicationHost配置文件中对应的部分截图；" class="headerlink" title="1.为了防止web中.mdb数据库文件非法下载，请对Web配置文件进行安全加固，将C:\Windows\System32\inetsrv\config\applicationHost配置文件中对应的部分截图；"></a>1.为了防止web中.mdb数据库文件非法下载，请对Web配置文件进行安全加固，将C:\Windows\System32\inetsrv\config\applicationHost配置文件中对应的部分截图；</h5><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230515133359981.png" srcset="/img/loading.gif" lazyload alt="image-20230515133359981"></p>
+<h5 id="2-限制目录执行权限-对picture和upload目录设置执行权限为无，将编辑功能权限的配置界面截图；"><a href="#2-限制目录执行权限-对picture和upload目录设置执行权限为无，将编辑功能权限的配置界面截图；" class="headerlink" title="2.限制目录执行权限,对picture和upload目录设置执行权限为无，将编辑功能权限的配置界面截图；"></a>2.限制目录执行权限,对picture和upload目录设置执行权限为无，将编辑功能权限的配置界面截图；</h5><h5 id="3-开启IIS的日志审计记录-日志文件保存格式为W3C-只记录日期、时间、客户端IP地址、用户名、方法-，将W3C日志记录字段的配置界面截图；"><a href="#3-开启IIS的日志审计记录-日志文件保存格式为W3C-只记录日期、时间、客户端IP地址、用户名、方法-，将W3C日志记录字段的配置界面截图；" class="headerlink" title="3.开启IIS的日志审计记录(日志文件保存格式为W3C,只记录日期、时间、客户端IP地址、用户名、方法)，将W3C日志记录字段的配置界面截图；"></a>3.开启IIS的日志审计记录(日志文件保存格式为W3C,只记录日期、时间、客户端IP地址、用户名、方法)，将W3C日志记录字段的配置界面截图；</h5><h5 id="4-为了减轻网站负载，设置网站最大并发连接数为1000，将编辑网站限制的配置界面截图；"><a href="#4-为了减轻网站负载，设置网站最大并发连接数为1000，将编辑网站限制的配置界面截图；" class="headerlink" title="4.为了减轻网站负载，设置网站最大并发连接数为1000，将编辑网站限制的配置界面截图；"></a>4.为了减轻网站负载，设置网站最大并发连接数为1000，将编辑网站限制的配置界面截图；</h5><h5 id="5-防止文件枚举漏洞枚举网络服务器根目录文件，禁止IIS短文件名泄露，将配置命令截图；"><a href="#5-防止文件枚举漏洞枚举网络服务器根目录文件，禁止IIS短文件名泄露，将配置命令截图；" class="headerlink" title="5.防止文件枚举漏洞枚举网络服务器根目录文件，禁止IIS短文件名泄露，将配置命令截图；"></a>5.防止文件枚举漏洞枚举网络服务器根目录文件，禁止IIS短文件名泄露，将配置命令截图；</h5><h5 id="6-关闭IIS的WebDAV功能增强网站的安全性，将警报提示信息截图。"><a href="#6-关闭IIS的WebDAV功能增强网站的安全性，将警报提示信息截图。" class="headerlink" title="6.关闭IIS的WebDAV功能增强网站的安全性，将警报提示信息截图。"></a>6.关闭IIS的WebDAV功能增强网站的安全性，将警报提示信息截图。</h5><h3 id="A-3流量完整性保护与事件监控（Web-log）"><a href="#A-3流量完整性保护与事件监控（Web-log）" class="headerlink" title="A-3流量完整性保护与事件监控（Web,log）"></a>A-3流量完整性保护与事件监控（Web,log）</h3><h5 id="1-为了防止密码在登录或者传输信息时被窃取，仅使用证书登录SSH（Log），将-etc-ssh-sshd-config配置文件中对应的部分截图；"><a href="#1-为了防止密码在登录或者传输信息时被窃取，仅使用证书登录SSH（Log），将-etc-ssh-sshd-config配置文件中对应的部分截图；" class="headerlink" title="1.为了防止密码在登录或者传输信息时被窃取，仅使用证书登录SSH（Log），将/etc/ssh/sshd_config配置文件中对应的部分截图；"></a>1.为了防止密码在登录或者传输信息时被窃取，仅使用证书登录SSH（Log），将/etc/ssh/sshd_config配置文件中对应的部分截图；</h5><h5 id="2-将Web服务器开启审核策略"><a href="#2-将Web服务器开启审核策略" class="headerlink" title="2.将Web服务器开启审核策略"></a>2.将Web服务器开启审核策略</h5><h5 id="登录事件-成功-失败"><a href="#登录事件-成功-失败" class="headerlink" title="登录事件 成功/失败;"></a>登录事件 成功/失败;</h5><h5 id="特权使用-成功"><a href="#特权使用-成功" class="headerlink" title="特权使用 成功;"></a>特权使用 成功;</h5><h5 id="策略更改-成功-失败"><a href="#策略更改-成功-失败" class="headerlink" title="策略更改 成功/失败;"></a>策略更改 成功/失败;</h5><h5 id="进程跟踪-成功-失败"><a href="#进程跟踪-成功-失败" class="headerlink" title="进程跟踪 成功/失败;"></a>进程跟踪 成功/失败;</h5><h5 id="将审核策略的配置界面截图；"><a href="#将审核策略的配置界面截图；" class="headerlink" title="将审核策略的配置界面截图；"></a>将审核策略的配置界面截图；</h5><h5 id="3-配置Splunk接收Web服务器，安全日志，系统日志，CPU负载，内存，磁盘空间，网络状态。将转发器：部署成功的页面截图。"><a href="#3-配置Splunk接收Web服务器，安全日志，系统日志，CPU负载，内存，磁盘空间，网络状态。将转发器：部署成功的页面截图。" class="headerlink" title="3.配置Splunk接收Web服务器，安全日志，系统日志，CPU负载，内存，磁盘空间，网络状态。将转发器：部署成功的页面截图。"></a>3.配置Splunk接收Web服务器，安全日志，系统日志，CPU负载，内存，磁盘空间，网络状态。将转发器：部署成功的页面截图。</h5><h3 id="A-4防火墙策略"><a href="#A-4防火墙策略" class="headerlink" title="A-4防火墙策略"></a>A-4防火墙策略</h3><h5 id="所有服务器开启防火墙-为防止勒索病毒攻击对防火墙进行加固策略："><a href="#所有服务器开启防火墙-为防止勒索病毒攻击对防火墙进行加固策略：" class="headerlink" title="所有服务器开启防火墙,为防止勒索病毒攻击对防火墙进行加固策略："></a>所有服务器开启防火墙,为防止勒索病毒攻击对防火墙进行加固策略：</h5><h5 id="1-Windows系统禁用445端口，将防火墙入站规则截图；"><a href="#1-Windows系统禁用445端口，将防火墙入站规则截图；" class="headerlink" title="1.Windows系统禁用445端口，将防火墙入站规则截图；"></a>1.Windows系统禁用445端口，将防火墙入站规则截图；</h5><h5 id="2-Linux系统禁用23端口，将iptables配置命令截图；"><a href="#2-Linux系统禁用23端口，将iptables配置命令截图；" class="headerlink" title="2.Linux系统禁用23端口，将iptables配置命令截图；"></a>2.Linux系统禁用23端口，将iptables配置命令截图；</h5><h5 id="3-Linux系统禁止别人ping通，将iptables配置命令截图；"><a href="#3-Linux系统禁止别人ping通，将iptables配置命令截图；" class="headerlink" title="3.Linux系统禁止别人ping通，将iptables配置命令截图；"></a>3.Linux系统禁止别人ping通，将iptables配置命令截图；</h5><h5 id="4-Linux系统为确保安全禁止所有人连接SSH除了172-16-1-1这个ip，将iptables配置命令截图。"><a href="#4-Linux系统为确保安全禁止所有人连接SSH除了172-16-1-1这个ip，将iptables配置命令截图。" class="headerlink" title="4.Linux系统为确保安全禁止所有人连接SSH除了172.16.1.1这个ip，将iptables配置命令截图。"></a>4.Linux系统为确保安全禁止所有人连接SSH除了172.16.1.1这个ip，将iptables配置命令截图。</h5>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/linux/">#linux</a>
+      
+        <a href="/tags/windows/">#windows</a>
+      
+        <a href="/tags/%E8%AF%84%E4%BC%B0/">#评估</a>
+      
+        <a href="/tags/%E5%AE%89%E5%85%A8/">#安全</a>
+      
+        <a href="/tags/%E6%AF%94%E8%B5%9B/">#比赛</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>网络安全——模块A（解析）</div>
+      <div>http://example.com/2023/05/14/网安模块A/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>江帆</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年5月14日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              未经允许禁止转载
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/04/27/volatility%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="Volatility安装及使用（基础）">
+                        <span class="hidden-mobile">Volatility安装及使用（基础）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a ><span>江帆</span></a> <i class="iconfont icon-love"></i> <a ><span>博客</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
