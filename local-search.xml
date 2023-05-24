@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>splunk安装及使用（基础）</title>
+    <link href="/2023/05/22/splunk%E5%AE%89%E8%A3%85/"/>
+    <url>/2023/05/22/splunk%E5%AE%89%E8%A3%85/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目为：配置Splunk接收Web服务器，安全日志，系统日志，CPU负载，内存，磁盘空间，网络状态。将转发器：部署成功的页面截图"><a href="#题目为：配置Splunk接收Web服务器，安全日志，系统日志，CPU负载，内存，磁盘空间，网络状态。将转发器：部署成功的页面截图" class="headerlink" title="题目为：配置Splunk接收Web服务器，安全日志，系统日志，CPU负载，内存，磁盘空间，网络状态。将转发器：部署成功的页面截图"></a>题目为：配置Splunk接收Web服务器，安全日志，系统日志，CPU负载，内存，磁盘空间，网络状态。将转发器：部署成功的页面截图</h2><p>简介：Splunk 是一款顶级的<strong>日志分析软件</strong>，如果你经常用 grep、awk、sed、sort、uniq、tail、head 来分析日志，那么你需要 Splunk。 能处理常规的日志格式，比如 apache、squid、系统日志、mail.log 这些。 对所有日志先进行 index，然后可以交叉查询，支持复杂的查询语句。 然后通过直观的方式表现出来。 日志可以通过文件方式传倒 Splunk 服务器，也可以通过网络实时传输过去。 或者是分布式的日志收集。 总之支持多种日志收集方法。 这个软件分为免费版本和专业版本。 Splunk是一个分析计算机系统产生的 机器数据 ，并在广泛的场景中提供 数据收集、分析、可视化 分布式的数据计算平台。 Splunk 是一个 数据引擎 。</p><p>（要不是比赛 我都不知道有这个软件，我是真的会难过  赛题提前一天公布 我 连夜找不到软件的另一半  我们比赛也吃了不会的亏）</p><h3 id="linux中安装"><a href="#linux中安装" class="headerlink" title="linux中安装"></a>linux中安装</h3><p>里面有个安装包 进行 解压  我这边用的是 图形化直接解压的   最好是用 代码方式解压  </p><p>解压代码 </p><p><strong>语法：</strong> tar [主选项 + 辅选项] 文件或目录</p><p>​            -z : 使用 gzip 来压缩和解压文件</p><p>​            -v : –verbose 详细的列出处理的文件</p><p>​            -f : –file=ARCHIVE 使用档案文件或设备，这个选项通常是必选的</p><p>​             -c : –create 创建一个新的归档（压缩包）</p><p>​             -x : 从压缩包中解出文件</p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524122929048.png" alt="image-20230524122929048"></p><p>点进去 可以看到很多文件  进入bin文件</p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524123009275.png" alt="image-20230524123009275"></p><p>进入文件后在当前的文件位置右键打开终端</p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524123052653.png" alt="image-20230524123052653"></p><p>启动splunk  输入./splunk start   (start:启动)（restart:重新启动）(stop:关闭)</p><p>打开后看到这个界面</p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524123310675.png" alt="image-20230524123310675"></p><p>长按空格跳转至设置栏  首个选项设置  Y   然后 对密码和账号设置   密码满足8位数 </p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524123428384.png" alt="image-20230524123428384"></p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524123447768.png" alt="image-20230524123447768"></p><p>点击上面的地址即可跳转设置网页进行登录设置</p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524123526425.png" alt="image-20230524123526425"></p><p>输入刚才设置的用户名和密码登录 跳转 </p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524123557335.png" alt="image-20230524123557335"></p><p>进来后 进行设置 选择 设置——-转发和接收</p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524123720246.png" alt="image-20230524123720246"></p><p>选择下面的按钮设置端口</p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524123754336.png" alt="image-20230524123754336"></p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524123834185.png" alt="image-20230524123834185"></p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524123923895.png" alt="image-20230524123923895"></p><h3 id="windows中安装"><a href="#windows中安装" class="headerlink" title="windows中安装"></a>windows中安装</h3><p>一样是一个安装包</p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524124112463.png" alt="image-20230524124112463"></p><p>勾选箭头位置 进行安装</p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524124644860.png" alt="image-20230524124644860"></p><p>设置用户名和密码  跟上面linux中设置的一样</p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524124822606.png" alt="image-20230524124822606"></p><p>在下方两个框中填入刚才linux的地址 端口号就是8089</p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524124912936.png" alt="image-20230524124912936"></p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524125513482.png" alt="image-20230524125513482"></p><p>保存安装  </p><h3 id="配置监控"><a href="#配置监控" class="headerlink" title="配置监控"></a>配置监控</h3><p>点击设置——监视控制台—-转发器（默认是关闭，手动开启）</p><p><img src="https://jiangfan-tu.oss-cn-beijing.aliyuncs.com/tupian/image-20230524125616777.png" alt="image-20230524125616777"></p><p>稍等一会会就可以接收到信息了</p><p>我这边 遇到问题了 就是安装的是windows7 他证书不全 所以收不到信息 所以我这边从新安装了一个win server 08 再试一下  </p><p>也不行  这边也不知道是什么原因 是用不了  </p><p>到这就结束了</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>linux</tag>
+      
+      <tag>评估</tag>
+      
+      <tag>基础</tag>
+      
+      <tag>安全</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>网络安全——模块A（解析）</title>
     <link href="/2023/05/14/%E7%BD%91%E5%AE%89%E6%A8%A1%E5%9D%97A/"/>
     <url>/2023/05/14/%E7%BD%91%E5%AE%89%E6%A8%A1%E5%9D%97A/</url>
