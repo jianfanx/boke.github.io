@@ -5,18 +5,18 @@
   
   <entry>
     <title>好久不见！</title>
-    <link href="/2024/03/19/%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0/"/>
-    <url>/2024/03/19/%E4%BB%8A%E6%97%A5%E5%AD%A6%E4%B9%A0/</url>
+    <link href="/2024/03/19/2024-3-19/"/>
+    <url>/2024/03/19/2024-3-19/</url>
     
-    <content type="html"><![CDATA[<p><img src="https://jiangfanx.oss-cn-beijing.aliyuncs.com/img/image-20240319171913209.png" alt="image-20240319171913209"></p><p>111</p><p>222</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="来更新日常啦"><a href="#来更新日常啦" class="headerlink" title="来更新日常啦"></a>来更新日常啦</h2><p>简单的做点wp今天做了一道杂项的题</p><p>具体就是buuctf里的 [GUET-CTF2019]虚假的压缩包</p><p>下载压缩包 </p><img src="https://jiangfanx.oss-cn-beijing.aliyuncs.com/img/image-20240319194838663.png"/><p>我也是抱着试一试的想法，用HXD看了一下  确定虚假的压缩包是伪加密  而真实的压缩包是真加密既然这样先把这个假的解出来</p><p><img src="https://jiangfanx.oss-cn-beijing.aliyuncs.com/img/image-20240319202723396.png" alt="image-20240319202723396"></p><p>将这里的09 改为08 就可以解开伪加密了里面有一个txt文本 内容如下</p><p><img src="https://jiangfanx.oss-cn-beijing.aliyuncs.com/img/image-20240319202832730.png" alt="image-20240319202832730">****</p><p>这里并不是简单的算术而是rsa加解密先来讲一下RSA</p><h3 id="什么是RSA："><a href="#什么是RSA：" class="headerlink" title="什么是RSA："></a>什么是RSA：</h3><p>RSA算法是一种<strong>非对称加密算法</strong>，由Ron Rivest、Adi Shamir和Leonard Adleman于1978年提出。 它基于大数分解的困难性，使用一对公钥和私钥进行加密和解密。</p><h4 id="怎么解开RSA的加密呢？"><a href="#怎么解开RSA的加密呢？" class="headerlink" title="怎么解开RSA的加密呢？"></a>怎么解开RSA的加密呢？</h4><p>这里涉及到以下知识</p><p><img src="https://jiangfanx.oss-cn-beijing.aliyuncs.com/img/image-20240319205034106.png" alt="image-20240319205034106"></p><p>取自b站：技术蛋老师的 RSA加解密的过程</p><p>就是现在要把这个东西代入这个公式里 </p><p>n=33  p和q就的出来了  p=3 q=11</p><p>然后看上面的欧拉公式不难得出  t=（p-1）x （q-1）= 20  </p><p>e = 3</p><p>d =（d x e) ÷ t = 1    就  d = 7 </p><p>现在要给了一个数字就是26  其实我是不能够完全明白 的但是具体是 26^7 mod (除余运算) 33（除33）余几</p><p>然后这个实例的答案是余5</p><p><img src="https://jiangfanx.oss-cn-beijing.aliyuncs.com/img/image-20240320144205355.png" alt="image-20240320144205355"></p><p>那么这里的答案就是：答案为5</p><p> 我们的到答案解开真实的压缩包 </p><p><img src="https://jiangfanx.oss-cn-beijing.aliyuncs.com/img/image-20240320145707486.png" alt="image-20240320145707486"></p><p>检查图片  发现高度有问题  </p><p><img src="https://jiangfanx.oss-cn-beijing.aliyuncs.com/img/image-20240320145937721.png" alt="image-20240320145937721"></p><p>将这里改为01 得到一个全新的 数字 是5次方  我的程度就是到这里了我又卡住了 然后参考资料</p><p><img src="https://jiangfanx.oss-cn-beijing.aliyuncs.com/img/image-20240320150031344.png" alt="image-20240320150031344"></p><p>查找资料得到这个代码  但是不对  有报错 然后就用ai去修修补补 最终用的是python3  所以修改了最后一句  </p><p><img src="https://jiangfanx.oss-cn-beijing.aliyuncs.com/img/image-20240320163939583.png" alt="image-20240320163939583"></p><p>大概意思是 将文件内容以16进制提取出来后 跟 5 进行异或运算  将运算的结果改成字符输出在下面那个doc文档里  运行代码 得到了 文档</p><p><img src="https://jiangfanx.oss-cn-beijing.aliyuncs.com/img/image-20240320164225292.png" alt="image-20240320164225292"></p><p>打开文档  发现 没有flag  尝试全选  修改底色为黑色</p><p><img src="https://jiangfanx.oss-cn-beijing.aliyuncs.com/img/image-20240320164313288.png" alt="image-20240320164313288"></p><p>flag就出来了 挺有趣的一道题  难点就在于思路  其次就是脚本 python脚本并不简单所以还是得多学多练。</p><h4 id="最后到这就结束了。在buuctf上有原题-可以去搜索一下-尝试做一下"><a href="#最后到这就结束了。在buuctf上有原题-可以去搜索一下-尝试做一下" class="headerlink" title="最后到这就结束了。在buuctf上有原题  可以去搜索一下 尝试做一下"></a>最后到这就结束了。在buuctf上有原题  可以去搜索一下 尝试做一下</h4><h5 id="GUET-CTF2019-虚假的压缩包"><a href="#GUET-CTF2019-虚假的压缩包" class="headerlink" title="[GUET-CTF2019]虚假的压缩包"></a>[GUET-CTF2019]虚假的压缩包</h5>]]></content>
     
     
     
     <tags>
       
-      <tag>自述</tag>
+      <tag>日常</tag>
       
-      <tag>测试</tag>
+      <tag>WP</tag>
       
     </tags>
     
@@ -29,7 +29,7 @@
     <link href="/2024/01/12/%E6%B5%8B%E8%AF%95/"/>
     <url>/2024/01/12/%E6%B5%8B%E8%AF%95/</url>
     
-    <content type="html"><![CDATA[<p>123123</p><p>qweqwe奥术大师多</p><p>阿萨德阿萨德as的</p><p><img src="https://jiangfanx.oss-cn-beijing.aliyuncs.com/img/image-20240319172450719.png" alt="image-20240319172450719"></p><p>的</p><p>as das das das</p><p>啊</p>]]></content>
+    <content type="html"><![CDATA[<p>123123</p><p>qweqwe奥术大师多</p><p>阿萨德阿萨德as的</p><p>的</p><p>as das das das</p><p>啊</p>]]></content>
     
     
     
